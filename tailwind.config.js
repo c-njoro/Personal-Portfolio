@@ -1,15 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: {
-    content: [
-      "./pages/**/*.{js,ts,jsx,tsx}", // All pages
-      "./components/**/*.{js,ts,jsx,tsx}", // All components
-      "./app/**/*.{js,ts,jsx,tsx}", // If you're using the App directory (Next.js 13+)
-    ],
-  },
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}", // Include all files in pages directory
+    "./components/**/*.{js,ts,jsx,tsx}", // Include all files in components directory
+    "./app/**/*.{js,ts,jsx,tsx}", // If you're using the App directory (Next.js 13+)
+  ],
   theme: {
     extend: {},
   },
-  variants: {},
   plugins: [],
 };
