@@ -113,7 +113,7 @@ const Home = () => {
           <div className="wheel"></div>
         </div>
 
-        <div className="my-info 2xl:w-2/3 xl:w-3/4 w-4/5  h-max grid grid-cols-1 lg:grid-cols-2 place-items-center z-10 bg-transparent gap-12 px-5 lg:px-0">
+        <div className="my-info ">
           <motion.div
             initial={{ opacity: 0, x: -200 }}
             whileInView={{ opacity: 1, x: 0 }}
