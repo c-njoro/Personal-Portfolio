@@ -32,7 +32,17 @@ const Home = () => {
           Your browser does not support the video tag.
         </video>
 
-        <div className="info">
+        <motion.div
+          initial={{ opacity: 0, y: -250 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="info"
+        >
           <h1>
             Hello, am <span>Charles</span>.
           </h1>
@@ -47,7 +57,17 @@ const Home = () => {
             reality.
           </p>
 
-          <div className="quick-action">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              type: "spring",
+              stiffness: 100,
+            }}
+            className="quick-action"
+          >
             <button>
               <p>What i do</p>
               <svg
@@ -83,8 +103,8 @@ const Home = () => {
                 />
               </svg>
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       <div className="about-me-container">
@@ -94,16 +114,36 @@ const Home = () => {
         </div>
 
         <div className="my-info">
-          <motion.div className="image-side">
+          <motion.div
+            initial={{ opacity: 0, x: -200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              type: "spring",
+              stiffness: 100,
+            }}
+            className="image-side"
+          >
             <Image
               alt="charles image"
               width={700}
               height={700}
-              src="https://images.pexels.com/photos/3777557/pexels-photo-3777557.jpeg"
+              src="/images/passport.jpeg"
               loading="lazy"
               className="big-image"
             ></Image>
-            <div className="links">
+            <motion.div
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 2,
+                ease: "easeInOut",
+                type: "spring",
+                stiffness: 100,
+              }}
+              className="links"
+            >
               <a
                 href="http://www.linkedin.com/in/charles-njoroge-063b0626a"
                 target="_blank"
@@ -135,10 +175,20 @@ const Home = () => {
               >
                 <FaInstagram />
               </a>
-            </div>
+            </motion.div>
           </motion.div>
 
-          <div className="info-side">
+          <motion.div
+            initial={{ opacity: 0, x: 200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              type: "spring",
+              stiffness: 100,
+            }}
+            className="info-side"
+          >
             <h1>About Me</h1>
             <p className="long-p">
               I am an experienced full-stack developer with a proven track
@@ -162,7 +212,7 @@ const Home = () => {
               <p>Express.js</p>
               <p>WordPress</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -181,7 +231,17 @@ const Home = () => {
         </div>
 
         <div className="head-section">
-          <div className="one-block">
+          <motion.div
+            initial={{ opacity: 0, x: -250 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              type: "spring",
+              stiffness: 100,
+            }}
+            className="one-block"
+          >
             <div className="left">
               <button></button>
             </div>
@@ -190,9 +250,19 @@ const Home = () => {
                 <span>Unique</span> Ideas
               </h1>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="one-block">
+          <motion.div
+            initial={{ opacity: 0, x: 250 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              type: "spring",
+              stiffness: 100,
+            }}
+            className="one-block"
+          >
             <div className="left">
               <button>
                 <p>What i do</p>
@@ -217,10 +287,20 @@ const Home = () => {
                 <span>For your</span> Business
               </h1>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="card-section">
+        <motion.div
+          initial={{ opacity: 0, y: 200 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="card-section"
+        >
           <div className="card-holder">
             <div className="card">
               <h1>Branding and Identity Design</h1>
@@ -318,7 +398,7 @@ const Home = () => {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <div className="main-discover-container">
@@ -327,24 +407,44 @@ const Home = () => {
           <div className="wheel"></div>
         </div>
         <div className="discover">
-          <div className="info-side">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              type: "spring",
+              stiffness: 100,
+            }}
+            className="info-side"
+          >
             <h1>
               <span>What</span> i can <span>do</span> <br />
               for your <span>Business</span>
             </h1>
             <p className="paragraph">
-              In today’s digital world, a powerful online presence is key to
-              business success. I specialize in creating custom websites that
+              In today&apos;s digital world, a powerful online presence is key
+              to business success. I specialize in creating custom websites that
               not only showcase your brand but also drive real results. From
-              stunning designs to seamless functionality, I’ll deliver a
+              stunning designs to seamless functionality, I&apos;ll deliver a
               tailored solution that enhances customer engagement, boosts
-              conversions, and streamlines operations. Whether you're looking to
-              launch a new site or upgrade an existing one, I can help transform
-              your vision into a digital experience that sets you apart from the
-              competition.
+              conversions, and streamlines operations. Whether you&apos;re
+              looking to launch a new site or upgrade an existing one, I can
+              help transform your vision into a digital experience that sets you
+              apart from the competition.
             </p>
 
-            <div className="charles">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 2,
+                ease: "easeInOut",
+                type: "spring",
+                stiffness: 100,
+              }}
+              className="charles"
+            >
               <Image
                 width={400}
                 height={400}
@@ -361,9 +461,19 @@ const Home = () => {
                   <span>Unleashing</span> wonderful boundless creativity
                 </p>
               </label>
-            </div>
-          </div>
-          <div className="image-side">
+            </motion.div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+              type: "spring",
+              stiffness: 100,
+            }}
+            className="image-side"
+          >
             <Image
               width={900}
               height={1000}
@@ -372,7 +482,7 @@ const Home = () => {
               className="big-image"
               alt="work image"
             ></Image>
-          </div>
+          </motion.div>
         </div>
       </div>
 

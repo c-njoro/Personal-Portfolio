@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
@@ -7,7 +8,17 @@ const Footer = () => {
   return (
     <div className="main-footer-component">
       <div className="top">
-        <div className="newsletter">
+        <motion.div
+          initial={{ opacity: 0, x: -150 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="newsletter"
+        >
           <h1>Charles.</h1>
           <p>Subscribe to my newsletter:</p>
           <label htmlFor="email">
@@ -34,26 +45,56 @@ const Footer = () => {
               </svg>
             </button>
           </label>
-        </div>
+        </motion.div>
 
-        <div className="links-side">
+        <motion.div
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="links-side"
+        >
           <a href="#home">Homepage</a>
           <a href="#portfolio">Portfolio</a>
           <a href="#services">Services</a>
           <a href="#newsletter">Newsletter</a>
           <a href="#others">Other pages</a>
-        </div>
+        </motion.div>
 
-        <div className="part">
+        <motion.div
+          initial={{ opacity: 0, x: 200 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="part"
+        >
           <p>Privacy policy</p>
           <p>Terms and Conditions</p>
           <p>Cookie Policy</p>
           <p>Careers</p>
-        </div>
+        </motion.div>
       </div>
 
       <div className="bottom">
-        <div className="copyright">
+        <motion.div
+          initial={{ opacity: 0, y: 150 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="copyright"
+        >
           <div className="links">
             <a
               href="http://www.linkedin.com/in/charles-njoroge-063b0626a"
@@ -92,24 +133,44 @@ const Footer = () => {
             <PiCopyrightThin />
             <p>Copyright 2024 - Mil.All Rights Reserved.</p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="part">
+        <motion.div
+          initial={{ opacity: 0, y: 150 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="part"
+        >
           <p>Websites</p>
           <p>Web Apps</p>
           <p>Mobile Apps</p>
           <p>Stand alone app</p>
           <p>Shopify Web</p>
           <p>Ussd codes</p>
-        </div>
+        </motion.div>
 
-        <div className="part">
+        <motion.div
+          initial={{ opacity: 0, x: 150 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="part"
+        >
           <h1>Kenya</h1>
           <p>Nairobi</p>
           <p>Donholm, Savannah</p>
           <p>mwanikic314@gmail.com</p>
           <p>+254720128694</p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

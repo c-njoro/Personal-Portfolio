@@ -1,19 +1,40 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 
 const Services = () => {
   return (
     <div className="main-services-component">
-      <div className="page-state">
+      <motion.div
+        initial={{ opacity: 0, x: -250 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 2,
+          ease: "easeInOut",
+          type: "spring",
+          stiffness: 100,
+        }}
+        className="page-state"
+      >
         <div className="line-through"></div>
         <Link href="/" className="home-link">
           Home{" "}
         </Link>
         <h4>/</h4>
         <p>Services</p>
-      </div>
+      </motion.div>
 
-      <div className="header">
+      <motion.div
+        initial={{ opacity: 0, x: -250 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 2,
+          ease: "easeInOut",
+          type: "spring",
+          stiffness: 100,
+        }}
+        className="header"
+      >
         <h1>
           <span>This is</span> what <br /> <span>I do</span> best
         </h1>
@@ -37,7 +58,7 @@ const Services = () => {
             </svg>
           </button>
         </div>
-      </div>
+      </motion.div>
 
       <div className="services-container">
         <div className="services-list">
@@ -51,7 +72,17 @@ const Services = () => {
           <div className="right">
             <div className="one-side">
               <div className="space-above"></div>
-              <div className="service">
+              <motion.div
+                initial={{ opacity: 0, y: 250 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                  type: "spring",
+                  stiffness: 100,
+                }}
+                className="service"
+              >
                 <h1>Website Design and Development</h1>
 
                 <p className="paragraph">
@@ -82,8 +113,18 @@ const Services = () => {
                     />
                   </svg>
                 </button>
-              </div>
-              <div className="service">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 250 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                  type: "spring",
+                  stiffness: 100,
+                }}
+                className="service"
+              >
                 <h1>WebApp Development</h1>
 
                 <p className="paragraph">
@@ -114,11 +155,21 @@ const Services = () => {
                     />
                   </svg>
                 </button>
-              </div>
+              </motion.div>
             </div>
 
             <div className="one-side">
-              <div className="service">
+              <motion.div
+                initial={{ opacity: 0, y: 250 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                  type: "spring",
+                  stiffness: 100,
+                }}
+                className="service"
+              >
                 <h1>Mobile App development</h1>
 
                 <p className="paragraph">
@@ -149,8 +200,18 @@ const Services = () => {
                     />
                   </svg>
                 </button>
-              </div>
-              <div className="service">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 250 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                  type: "spring",
+                  stiffness: 100,
+                }}
+                className="service"
+              >
                 <h1>System repair</h1>
 
                 <p className="paragraph">
@@ -181,25 +242,45 @@ const Services = () => {
                     />
                   </svg>
                 </button>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
       </div>
 
       <div className="impact-part">
-        <div className="top">
+        <motion.div
+          initial={{ opacity: 0, x: 250 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="top"
+        >
           <p>
-            looking to make your mark? We'll help you turn <br /> your project
-            into a success
+            Looking to make your mark? We&apos;ll help you turn <br /> your
+            project into a success
           </p>
           <div className="line-through"></div>
-        </div>
+        </motion.div>
 
-        <div className="bottom">
+        <motion.div
+          initial={{ opacity: 0, y: -250 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="bottom"
+        >
           <div className="big-text">
             <h1>
-              <span>Let's make an</span> impact{" "}
+              <span>Let&apos;s make an</span> impact{" "}
             </h1>
             <h1>
               <span>together. Ready</span> when you are
@@ -223,7 +304,7 @@ const Services = () => {
               />
             </svg>
           </button>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

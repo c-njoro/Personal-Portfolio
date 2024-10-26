@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Works = () => {
@@ -9,7 +10,17 @@ const Works = () => {
       </div>
 
       <div className="my-work">
-        <div className="images-side">
+        <motion.div
+          initial={{ opacity: 0, y: 150 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="images-side"
+        >
           <div className="images-holder">
             <div className="one-image">
               <Image
@@ -68,7 +79,7 @@ const Works = () => {
             </div>
           </div>
           <div className="images-holder">
-            <p>* Some of Charles' great works </p>
+            <p>Some of Charles&apos; great works</p>
 
             <div className="one-image">
               <Image
@@ -126,19 +137,29 @@ const Works = () => {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="info-side">
+        <motion.div
+          initial={{ opacity: 0, y: -150 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            type: "spring",
+            stiffness: 100,
+          }}
+          className="info-side"
+        >
           <h1>
             view <br /> my work{" "}
           </h1>
           <p>
-            Here you'll find a selection of projects showcasing my skills in
-            full-stack development, UI/UX design, and creative problem-solving.
-            From building robust web applications to crafting visually engaging
-            interfaces, each project reflects my passion for creating seamless
-            digital experiences. Explore the details to see how I bring ideas to
-            life through code.
+            Here you&apos;ll find a selection of projects showcasing my skills
+            in full-stack development, UI/UX design, and creative
+            problem-solving. From building robust web applications to crafting
+            visually engaging interfaces, each project reflects my passion for
+            creating seamless digital experiences. Explore the details to see
+            how I bring ideas to life through code.
           </p>
           <button>
             <p>Read more</p>
@@ -160,7 +181,7 @@ const Works = () => {
           <h2>
             I <span>deliver</span> <br /> exceptional <span>results</span>.
           </h2>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

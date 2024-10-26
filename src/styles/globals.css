@@ -14,7 +14,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 200ms ease-in-out;
 }
 .home {
   @apply w-[calc(100vw)] overflow-x-hidden h-max relative overflow-hidden;
@@ -38,6 +37,22 @@
 
 .give-black-bg {
   background-color: rgba(0, 0, 0, 0.993);
+}
+
+.to-top {
+  @apply fixed -right-3 bottom-32 text-white -rotate-90;
+
+  button {
+    @apply flex flex-row items-center justify-center gap-3 font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm text-blue-300;
+
+    .icon {
+      @apply sm:size-10 size-7  p-2 text-blue-300 rounded-full;
+    }
+  }
+
+  button:hover {
+    @apply translate-x-2;
+  }
 }
 
 /* css for the header and the menu part */

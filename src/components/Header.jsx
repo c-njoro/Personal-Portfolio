@@ -45,7 +45,7 @@ const Header = () => {
       <div className={`${menuClass}`}>
         <div className={`menu-container`}>
           <div className="links-side">
-            <Link className="a" href="/services">
+            <Link className="a" href="/">
               Homepage
             </Link>
             <Link className="a" href="/services">
