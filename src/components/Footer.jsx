@@ -84,17 +84,7 @@ const Footer = () => {
       </div>
 
       <div className="bottom">
-        <motion.div
-          initial={{ opacity: 0, y: 150 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 2,
-            ease: "easeInOut",
-            type: "spring",
-            stiffness: 100,
-          }}
-          className="copyright"
-        >
+        <div className="copyright">
           <div className="links">
             <a
               href="http://www.linkedin.com/in/charles-njoroge-063b0626a"
@@ -133,7 +123,7 @@ const Footer = () => {
             <PiCopyrightThin />
             <p>Copyright 2024 - Mil.All Rights Reserved.</p>
           </div>
-        </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 150 }}

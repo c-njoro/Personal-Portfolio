@@ -11,7 +11,7 @@ const Structure = ({ children }) => {
   }
 
   return (
-    <div>
+    <div className="relative overflow-hidden">
       <div>
         <CursorFollower />
       </div>

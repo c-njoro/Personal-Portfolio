@@ -477,7 +477,7 @@ const Home = () => {
             <Image
               width={900}
               height={1000}
-              src="/images/developer.jpg"
+              src="https://images.pexels.com/photos/4974914/pexels-photo-4974914.jpeg"
               loading="lazy"
               className="big-image"
               alt="work image"
