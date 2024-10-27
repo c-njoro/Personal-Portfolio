@@ -38,7 +38,7 @@ const Header = () => {
   return (
     <div className="header-page">
       <div className="main-header-component" id="nav">
-        <p>C.</p>
+        <p className="logo">C.</p>
         <div className={`${ham}`} onClick={openMenu}></div>
       </div>
 
@@ -64,29 +64,29 @@ const Header = () => {
 
           <div className="footer-like-side">
             <div className="part">
-              <h1>Projects</h1>
-              <p>Websites</p>
-              <p>Web Apps</p>
-              <p>Mobile Apps</p>
-              <p>Stand alone app</p>
-              <p>Shopify Web</p>
-              <p>Ussd codes</p>
+              <h1 className="part-h">Projects</h1>
+              <p className="part-p">Websites</p>
+              <p className="part-p">Web Apps</p>
+              <p className="part-p">Mobile Apps</p>
+              <p className="part-p">Stand alone app</p>
+              <p className="part-p">Shopify Web</p>
+              <p className="part-p">Ussd codes</p>
             </div>
 
             <div className="part">
-              <h1>Useful Links</h1>
-              <p>Privacy policy</p>
-              <p>Terms and Conditions</p>
-              <p>Cookie Policy</p>
-              <p>Careers</p>
+              <h1 className="part-h">Useful Links</h1>
+              <p className="part-p">Privacy policy</p>
+              <p className="part-p">Terms and Conditions</p>
+              <p className="part-p">Cookie Policy</p>
+              <p className="part-p">Careers</p>
             </div>
 
             <div className="part">
-              <h1>Kenya</h1>
-              <p>Nairobi</p>
-              <p>Donholm, Savannah</p>
-              <p>mwanikic314@gmail.com</p>
-              <p>+254720128694</p>
+              <h1 className="part-h">Kenya</h1>
+              <p className="part-p">Nairobi</p>
+              <p className="part-p">Donholm, Savannah</p>
+              <p className="part-p">mwanikic314@gmail.com</p>
+              <p className="part-p">+254720128694</p>
             </div>
           </div>
         </div>
