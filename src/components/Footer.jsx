@@ -19,32 +19,38 @@ const Footer = () => {
           }}
           className="newsletter"
         >
-          <h1>Charles.</h1>
-          <p>Subscribe to my newsletter:</p>
-          <label htmlFor="email">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email to register..."
-            />
-            <button>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="icon"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                />
-              </svg>
-            </button>
-          </label>
+          <div className="w-full h-max">
+            <h1>Charles.</h1>
+          </div>
+          <div className="w-full h-max">
+            <p>Subscribe to my newsletter:</p>
+          </div>
+          <div className="w-full h-max">
+            <label htmlFor="email">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email to register..."
+              />
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="icon"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </button>
+            </label>
+          </div>
         </motion.div>
 
         <motion.div
