@@ -1,4 +1,4 @@
-import "@/styles/tailwind.css";
+import "@/styles/Home.css";
 import type { AppProps } from "next/app";
 import Structure from "../components/Structure";
 
