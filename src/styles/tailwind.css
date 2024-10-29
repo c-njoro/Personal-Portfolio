@@ -15,9 +15,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-.home {
-  @apply w-screen overflow-x-hidden h-max relative overflow-hidden;
-}
 
 /* Cursor follower styles */
 .cursor-follower {
@@ -54,13 +51,12 @@
     @apply translate-x-2;
   }
 }
-
 /* css for the header and the menu part */
 .header-page {
   @apply w-screen  h-max flex flex-col;
 
   .main-header-component {
-    @apply w-screen sm:h-[calc(15vh)] h-[calc(10vh)]   flex flex-row justify-between items-center px-12;
+    @apply w-full sm:h-[calc(15vh)] h-[calc(10vh)]   flex flex-row justify-between items-center px-12;
     transition: background 500ms ease-in-out;
 
     .logo {
@@ -117,7 +113,7 @@
   }
 
   .menu-show {
-    @apply w-screen sm:h-[calc(86vh)] h-[calc(91vh)];
+    @apply w-full sm:h-[calc(86vh)] h-[calc(91vh)];
 
     .menu-container {
       @apply w-full h-full grid lg:grid-cols-2 grid-cols-1 text-white;
@@ -156,461 +152,266 @@
   }
 }
 
-/* css for the landing part */
-.main-home-container {
-  @apply w-screen h-screen relative flex flex-col justify-end items-start;
+.home {
+  @apply w-screen overflow-x-hidden h-max relative overflow-hidden;
+  overscroll-behavior: none;
 
-  .bg-video {
-    @apply w-full h-screen object-cover absolute inset-0 -z-10;
-  }
+  /* css for the landing part */
+  .main-home-container {
+    @apply w-full h-screen relative flex flex-col justify-end items-start;
 
-  .info {
-    @apply w-full text-white h-full pl-5 2xl:pl-72 xl:pl-56 lg:pl-40 md:pl-24  flex flex-col justify-end items-start gap-10 pb-40;
-
-    .info-h {
-      @apply capitalize font-thin text-white font-body  tracking-widest text-4xl sm:text-6xl lg:text-7xl;
-
-      span {
-        @apply font-bold;
-      }
+    .bg-video {
+      @apply w-full h-screen object-cover absolute inset-0 -z-10;
     }
 
-    .more {
-      @apply h-max w-full md:w-1/2 xl:w-1/3 tracking-wide font-thin text-sm sm:text-base;
-    }
+    .info {
+      @apply w-full text-white h-full pl-5 2xl:pl-72 xl:pl-56 lg:pl-40 md:pl-24  flex flex-col justify-end items-start gap-10 pb-40;
 
-    .quick-action {
-      @apply flex flex-row items-center justify-start gap-8;
-
-      .home-button {
-        @apply flex flex-row items-center justify-center gap-5 py-2 px-5 sm:px-7 font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm;
-        border: 1px solid #81c7ed;
-
-        .icon {
-          @apply sm:size-10 size-7  p-2 text-black rounded-full;
-        }
-      }
-
-      .home-button:first-of-type {
-        @apply gap-7 hover:translate-x-2 hover:scale-105;
-        background-color: #81c7ed;
-        border: none !important;
-      }
-
-      .home-button:last-of-type {
-        @apply hover:-translate-x-2;
-      }
-    }
-  }
-}
-
-/* css for the what i can do for your bs part */
-.main-discover-container {
-  @apply w-screen  min-h-screen h-max relative flex flex-col justify-center items-center py-12 lg:py-5;
-  background-color: aliceblue;
-
-  .animating-back {
-    @apply w-full h-[calc(20vh)] flex flex-row justify-center items-center absolute opacity-35 rotate-90 lg:rotate-0;
-
-    .wheel {
-      @apply h-[calc(20vh)] w-[calc(20vh)] rounded-full;
-      border: 1px solid #81c7ed;
-    }
-
-    .wheel::after {
-      content: "";
-      width: 5px;
-      height: 5px;
-      background-color: #81c7ed;
-      display: block;
-      border-radius: 50%;
-    }
-
-    .wheel:hover {
-      opacity: 0.8;
-    }
-
-    .wheel:first-of-type {
-      animation: slide 20s infinite linear;
-    }
-    .wheel:last-of-type {
-      animation: slideLeft 20s infinite linear;
-    }
-  }
-
-  .discover {
-    @apply 2xl:w-2/3 xl:w-3/4 w-4/5  h-max grid grid-cols-1 lg:grid-cols-2 place-items-center z-10 bg-transparent gap-8 px-5 lg:px-0;
-
-    .info-side {
-      @apply w-full h-full flex flex-col justify-center items-start gap-12;
-
-      .info-side-h {
-        @apply font-body font-extralight text-black xl:text-6xl tracking-wider 2xl:leading-relaxed leading-normal text-4xl capitalize;
+      .info-h {
+        @apply capitalize font-thin text-white font-body  tracking-widest text-4xl sm:text-6xl lg:text-7xl;
 
         span {
           @apply font-bold;
         }
       }
 
-      .paragraph {
-        @apply font-heading tracking-wide font-light text-gray-700 flex flex-row justify-start  w-full lg:w-3/4 leading-relaxed lg:text-base text-sm;
+      .more {
+        @apply h-max w-full md:w-1/2 xl:w-1/3 tracking-wide font-thin text-sm sm:text-base;
       }
 
-      .charles {
-        @apply w-full h-max flex flex-row gap-3 justify-start items-center;
+      .quick-action {
+        @apply flex flex-row items-center justify-start gap-8;
 
-        .image {
-          @apply w-24 h-24 object-cover rounded-full shadow-md relative;
+        .home-button {
+          @apply flex flex-row items-center justify-center gap-5 py-2 px-5 sm:px-7 font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm;
+          border: 1px solid #81c7ed;
+
+          .icon {
+            @apply sm:size-10 size-7  p-2 text-black rounded-full;
+          }
         }
 
-        .image:hover {
-          scale: 1.1;
-          cursor: pointer;
+        .home-button:first-of-type {
+          @apply gap-7 hover:translate-x-2 hover:scale-105;
+          background-color: #81c7ed;
+          border: none !important;
         }
-        .label {
-          @apply w-max h-max flex flex-col justify-center items-start;
+
+        .home-button:last-of-type {
+          @apply hover:-translate-x-2;
         }
-        .label-p {
-          @apply font-heading tracking-wider font-thin  text-gray-900 leading-loose capitalize xl:text-base lg:text-sm text-xs;
+      }
+    }
+  }
+
+  /* css for the what i can do for your bs part */
+  .main-discover-container {
+    @apply w-full  min-h-screen h-max relative flex flex-col justify-center items-center py-12 lg:py-5;
+    background-color: aliceblue;
+
+    .animating-back {
+      @apply w-full h-[calc(20vh)] flex flex-row justify-center items-center absolute opacity-35 rotate-90 lg:rotate-0;
+
+      .wheel {
+        @apply h-[calc(20vh)] w-[calc(20vh)] rounded-full;
+        border: 1px solid #81c7ed;
+      }
+
+      .wheel::after {
+        content: "";
+        width: 5px;
+        height: 5px;
+        background-color: #81c7ed;
+        display: block;
+        border-radius: 50%;
+      }
+
+      .wheel:hover {
+        opacity: 0.8;
+      }
+
+      .wheel:first-of-type {
+        animation: slide 20s infinite linear;
+      }
+      .wheel:last-of-type {
+        animation: slideLeft 20s infinite linear;
+      }
+    }
+
+    .discover {
+      @apply 2xl:w-2/3 xl:w-3/4 w-4/5  h-max grid grid-cols-1 lg:grid-cols-2 place-items-center z-10 bg-transparent gap-8 px-5 lg:px-0;
+
+      .info-side {
+        @apply w-full h-full flex flex-col justify-center items-start gap-12;
+
+        .info-side-h {
+          @apply font-body font-extralight text-black xl:text-6xl tracking-wider 2xl:leading-relaxed leading-normal text-4xl capitalize;
+
+          span {
+            @apply font-bold;
+          }
+        }
+
+        .paragraph {
+          @apply font-heading tracking-wide font-light text-gray-700 flex flex-row justify-start  w-full lg:w-3/4 leading-relaxed lg:text-base text-sm;
+        }
+
+        .charles {
+          @apply w-full h-max flex flex-row gap-3 justify-start items-center;
+
+          .image {
+            @apply w-24 h-24 object-cover rounded-full shadow-md relative;
+          }
+
+          .image:hover {
+            scale: 1.1;
+            cursor: pointer;
+          }
+          .label {
+            @apply w-max h-max flex flex-col justify-center items-start;
+          }
+          .label-p {
+            @apply font-heading tracking-wider font-thin  text-gray-900 leading-loose capitalize xl:text-base lg:text-sm text-xs;
+
+            span {
+              @apply font-bold;
+            }
+          }
+        }
+      }
+
+      .image-side {
+        @apply w-full lg:h-full h-max flex flex-col justify-center items-center;
+
+        .big-image {
+          @apply h-3/4 xl:w-4/5 lg:w-11/12 w-full object-cover min-h-[calc(70vh)];
+        }
+      }
+    }
+  }
+
+  /* css for the unique ideas part */
+  .main-ideas-container {
+    @apply w-full md:h-[calc(90vh)] h-max relative flex flex-col justify-between items-center text-white pt-8 gap-16;
+
+    .bg-video {
+      @apply w-full h-full object-cover absolute inset-0 -z-10;
+    }
+
+    .intro {
+      @apply w-full h-[calc(10vh)] flex flex-row justify-end items-end gap-8;
+
+      .line-through {
+        @apply w-1/5 sm:w-1/3 h-7 border-t border-gray-500;
+      }
+
+      .intro-p {
+        @apply font-body font-thin tracking-wide text-xs sm:text-sm flex flex-col justify-center items-end;
+        line-height: 15px;
+      }
+    }
+
+    .head-section {
+      @apply w-full h-max flex flex-col gap-8 justify-center items-center;
+
+      .one-block {
+        @apply w-full h-max flex sm:flex-row flex-col justify-center items-center gap-10;
+
+        .left {
+          .left-button {
+            @apply md:min-w-72 min-w-56 h-16 flex flex-row items-center justify-center gap-5 
+             font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm shadow-lg;
+
+            .icon {
+              @apply sm:size-10 size-7  p-2 text-black rounded-full;
+            }
+          }
+        }
+
+        .right {
+          @apply flex flex-row justify-center font-body items-center text-white lg:text-7xl md:text-5xl text-3xl tracking-wider font-thin;
 
           span {
             @apply font-bold;
           }
         }
       }
-    }
 
-    .image-side {
-      @apply w-full lg:h-full h-max flex flex-col justify-center items-center;
+      .one-block:last-of-type {
+        @apply sm:flex-row-reverse flex-col-reverse;
 
-      .big-image {
-        @apply h-3/4 xl:w-4/5 lg:w-11/12 w-full object-cover min-h-[calc(70vh)];
-      }
-    }
-  }
-}
-
-/* css for the unique ideas part */
-.main-ideas-container {
-  @apply w-screen md:h-[calc(90vh)] h-max relative flex flex-col justify-between items-center text-white pt-8 gap-16;
-
-  .bg-video {
-    @apply w-full h-full object-cover absolute inset-0 -z-10;
-  }
-
-  .intro {
-    @apply w-full h-[calc(10vh)] flex flex-row justify-end items-end gap-8;
-
-    .line-through {
-      @apply w-1/5 sm:w-1/3 h-7 border-t border-gray-500;
-    }
-
-    .intro-p {
-      @apply font-body font-thin tracking-wide text-xs sm:text-sm flex flex-col justify-center items-end;
-      line-height: 15px;
-    }
-  }
-
-  .head-section {
-    @apply w-full h-max flex flex-col gap-8 justify-center items-center;
-
-    .one-block {
-      @apply w-full h-max flex sm:flex-row flex-col justify-center items-center gap-10;
-
-      .left {
         .left-button {
-          @apply md:min-w-72 min-w-56 h-16 flex flex-row items-center justify-center gap-5 
-             font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm shadow-lg;
+          justify-content: space-around;
+          background-color: var(--text-blueLight);
+        }
+      }
 
-          .icon {
-            @apply sm:size-10 size-7  p-2 text-black rounded-full;
+      .one-block:first-of-type {
+        .left-button {
+          background-image: url("https://images.pexels.com/photos/38568/apple-imac-ipad-workplace-38568.jpeg");
+          background-size: cover;
+          background-position: bottom;
+        }
+
+        .left-button:hover {
+          backdrop-filter: blur("10px");
+        }
+      }
+    }
+
+    .card-section {
+      @apply h-3/5 w-full flex flex-row items-end justify-center;
+
+      .card-holder {
+        @apply w-11/12  xl:w-3/4 2xl:w-2/3 h-max grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-4 border-t border-r border-gray-800;
+
+        .card {
+          @apply w-full h-max border-l  border-gray-800 grid grid-cols-1 gap-6 py-10 px-3 relative border-t md:border-t-0;
+
+          .card-h {
+            @apply font-heading font-semibold text-lg capitalize text-white w-full h-12;
           }
-        }
-      }
 
-      .right {
-        @apply flex flex-row justify-center font-body items-center text-white lg:text-7xl md:text-5xl text-3xl tracking-wider font-thin;
+          .card-p {
+            @apply w-full h-max min-h-28 pt-3 font-body font-light text-gray-400 translate-y-0 opacity-100 md:translate-y-6 md:opacity-0;
+            transition: all 500ms ease-in-out;
+          }
 
-        span {
-          @apply font-bold;
-        }
-      }
-    }
-
-    .one-block:last-of-type {
-      @apply sm:flex-row-reverse flex-col-reverse;
-
-      .left-button {
-        justify-content: space-around;
-        background-color: var(--text-blueLight);
-      }
-    }
-
-    .one-block:first-of-type {
-      .left-button {
-        background-image: url("https://images.pexels.com/photos/38568/apple-imac-ipad-workplace-38568.jpeg");
-        background-size: cover;
-        background-position: bottom;
-      }
-
-      .left-button:hover {
-        backdrop-filter: blur("10px");
-      }
-    }
-  }
-
-  .card-section {
-    @apply h-3/5 w-full flex flex-row items-end justify-center;
-
-    .card-holder {
-      @apply w-11/12  xl:w-3/4 2xl:w-2/3 h-max grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-4 border-t border-r border-gray-800;
-
-      .card {
-        @apply w-full h-max border-l  border-gray-800 grid grid-cols-1 gap-6 py-10 px-3 relative border-t md:border-t-0;
-
-        .card-h {
-          @apply font-heading font-semibold text-lg capitalize text-white w-full h-12;
-        }
-
-        .card-p {
-          @apply w-full h-max min-h-28 pt-3 font-body font-light text-gray-400 translate-y-0 opacity-100 md:translate-y-6 md:opacity-0;
-          transition: all 500ms ease-in-out;
-        }
-
-        .card-button {
-          @apply w-full h-16 flex flex-row items-center justify-start gap-5 
+          .card-button {
+            @apply w-full h-16 flex flex-row items-center justify-start gap-5 
              font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm shadow-md opacity-100 md:opacity-50;
-          transition: all 500ms ease-in-out;
-
-          .icon {
-            @apply size-10 md:size-3 p-2 text-white rounded-full shadow-md;
-            background-color: var(--text-blueLight) !important;
-            transition: all 500ms ease-in-out;
-          }
-        }
-      }
-
-      .card::before {
-        content: "";
-        display: block;
-        width: 0;
-        height: 4px;
-        background-color: var(--text-blueLight);
-        position: absolute;
-        left: 0;
-        top: 0;
-        transform: translateY(-1px);
-        transition: width 500ms ease-in-out;
-      }
-
-      .card:hover::before {
-        width: 100%;
-      }
-
-      .card:hover {
-        border-top: none !important;
-
-        .card-p,
-        .card-button {
-          @apply opacity-100 translate-y-0;
-
-          .icon {
-            @apply size-10;
-          }
-        }
-      }
-    }
-  }
-}
-
-/* css for the about part */
-.about-me-container {
-  @apply w-screen min-h-[calc(95vh)] h-max relative flex flex-col justify-center items-center py-12 lg:py-5;
-  background-color: rgb(234, 242, 248);
-
-  .animating-back {
-    @apply w-full h-[calc(20vh)] flex flex-row justify-center items-center absolute opacity-35 rotate-90 lg:rotate-0;
-
-    .wheel {
-      @apply h-[calc(20vh)] w-[calc(20vh)] rounded-full;
-      border: 1px solid #81c7ed;
-    }
-
-    .wheel::after {
-      content: "";
-      width: 5px;
-      height: 5px;
-      background-color: #81c7ed;
-      display: block;
-      border-radius: 50%;
-    }
-
-    .wheel:hover {
-      opacity: 0.8;
-    }
-
-    .wheel:first-of-type {
-      animation: slide 20s infinite linear;
-    }
-    .wheel:last-of-type {
-      animation: slideLeft 20s infinite linear;
-    }
-  }
-
-  .my-info {
-    @apply 2xl:w-2/3 xl:w-3/4 w-4/5  h-max grid grid-cols-1 lg:grid-cols-2 place-items-center z-10 bg-transparent gap-12 px-5 lg:px-0;
-
-    .image-side {
-      @apply w-full lg:h-full h-max flex flex-col justify-center items-center gap-8;
-
-      .big-image {
-        @apply lg:h-1/2 xl:w-4/5 lg:w-10/12 w-64 h-64 rounded-full lg:rounded-none object-cover lg:min-h-[calc(60vh)] shadow-lg;
-        border-radius: 10px 0 10px 0;
-      }
-
-      .links {
-        @apply xl:w-4/5 lg:w-10/12 w-2/3  h-max flex flex-row justify-start items-center gap-8;
-
-        .one-link {
-          @apply p-2 shadow-md rounded-full text-black bg-white;
-        }
-
-        .one-link:hover {
-          @apply shadow-md rounded-full text-white bg-black;
-        }
-      }
-    }
-
-    .info-side {
-      @apply w-full h-max flex flex-col justify-center items-start gap-5;
-
-      .info-side-h {
-        @apply font-body font-semibold tracking-widest uppercase text-3xl;
-      }
-
-      .long-p {
-        @apply font-heading tracking-wide font-light text-gray-700 flex flex-row justify-start  w-full lg:w-3/4 leading-relaxed lg:text-base text-sm;
-      }
-
-      .info-side-h2 {
-        @apply font-bold font-heading text-gray-900 tracking-wide;
-      }
-
-      .skills {
-        @apply w-full h-max grid grid-cols-2 place-items-start gap-3;
-
-        .one-skill {
-          @apply font-body text-gray-700 text-sm tracking-wide capitalize relative flex flex-row pl-4 justify-start items-center;
-        }
-
-        .one-skill::after {
-          content: "";
-          position: absolute;
-          width: 6px;
-          height: 6px;
-          background-color: rgba(0, 0, 0, 0.607);
-          border-radius: 50%;
-          left: 0;
-        }
-      }
-    }
-  }
-}
-
-/* css for the work part */
-.main-works-container {
-  @apply w-screen h-max min-h-screen relative flex flex-col justify-center items-center py-12 lg:py-5 bg-pink-100 overflow-hidden;
-
-  .animating-back {
-    @apply w-full h-[calc(20vh)] flex flex-row justify-center items-center absolute opacity-35 rotate-90 lg:rotate-45;
-
-    .wheel {
-      @apply h-[calc(20vh)] w-[calc(20vh)] rounded-full;
-      border: 1px solid #81c7ed;
-    }
-
-    .wheel::after {
-      content: "";
-      width: 5px;
-      height: 5px;
-      background-color: #81c7ed;
-      display: block;
-      border-radius: 50%;
-    }
-
-    .wheel:hover {
-      opacity: 0.8;
-    }
-
-    .wheel:first-of-type {
-      animation: slide 20s infinite linear;
-    }
-    .wheel:last-of-type {
-      animation: slideLeft 20s infinite linear;
-    }
-  }
-
-  .my-work {
-    @apply 2xl:w-2/3 xl:w-3/4 w-4/5  h-max grid grid-cols-1 lg:grid-cols-2 place-items-center z-10 bg-transparent gap-12 px-5 lg:px-0;
-
-    .images-side {
-      @apply w-full h-max grid grid-cols-1 sm:grid-cols-2 gap-12;
-
-      .images-holder {
-        @apply w-full h-max flex flex-col gap-8;
-
-        .top-p {
-          @apply font-body tracking-wide text-sm text-gray-400;
-        }
-
-        .one-image {
-          @apply relative w-full h-max flex flex-col justify-center items-center;
-
-          .big-image {
-            @apply w-full h-80 object-cover shadow-md;
-          }
-
-          .work-name {
-            @apply absolute w-full h-max flex flex-row justify-center text-xl items-center py-1 tracking-wider font-body font-bold uppercase text-black translate-y-0 opacity-100 md:translate-y-6 md:opacity-0;
-            transition: all 500ms ease-in-out;
-            background-color: rgba(255, 192, 203, 0.607);
-          }
-
-          .work-button {
-            @apply absolute w-full h-16 flex flex-row items-center justify-center gap-5 mt-40
-               font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm opacity-100 md:opacity-50;
             transition: all 500ms ease-in-out;
 
             .icon {
               @apply size-10 md:size-3 p-2 text-white rounded-full shadow-md;
-              background-color: rgb(255, 148, 166) !important;
+              background-color: var(--text-blueLight) !important;
               transition: all 500ms ease-in-out;
             }
           }
         }
 
-        .one-image::before {
+        .card::before {
           content: "";
           display: block;
           width: 0;
           height: 4px;
-          background-color: pink;
+          background-color: var(--text-blueLight);
           position: absolute;
           left: 0;
-          bottom: 0;
-          transform: translateY(4px);
+          top: 0;
+          transform: translateY(-1px);
           transition: width 500ms ease-in-out;
         }
 
-        .one-image:hover::before {
+        .card:hover::before {
           width: 100%;
         }
 
-        .one-image:hover {
+        .card:hover {
           border-top: none !important;
 
-          .work-name,
-          .work-button {
+          .card-p,
+          .card-button {
             @apply opacity-100 translate-y-0;
 
             .icon {
@@ -620,36 +421,433 @@
         }
       }
     }
+  }
 
-    .info-side {
-      @apply w-full h-max flex flex-col gap-12 justify-center items-start lg:pl-12;
+  /* css for the about part */
+  .about-me-container {
+    @apply w-full min-h-[calc(95vh)] h-max relative flex flex-col justify-center items-center py-12 lg:py-5;
+    background-color: rgb(234, 242, 248);
 
-      .info-heading {
-        @apply flex flex-row justify-center font-heading items-center text-black leading-relaxed lg:text-7xl md:text-5xl text-3xl tracking-wider font-semibold capitalize;
+    .animating-back {
+      @apply w-full h-[calc(20vh)] flex flex-row justify-center items-center absolute opacity-35 rotate-90 lg:rotate-0;
+
+      .wheel {
+        @apply h-[calc(20vh)] w-[calc(20vh)] rounded-full;
+        border: 1px solid #81c7ed;
       }
 
-      .info-p {
-        @apply font-heading tracking-wide font-light text-gray-700 flex flex-row justify-start  w-full lg:w-3/4 leading-relaxed lg:text-base text-sm;
+      .wheel::after {
+        content: "";
+        width: 5px;
+        height: 5px;
+        background-color: #81c7ed;
+        display: block;
+        border-radius: 50%;
       }
 
-      .info-button {
-        @apply md:min-w-72 min-w-56 h-16 flex flex-row items-center justify-center gap-5 
+      .wheel:hover {
+        opacity: 0.8;
+      }
+
+      .wheel:first-of-type {
+        animation: slide 20s infinite linear;
+      }
+      .wheel:last-of-type {
+        animation: slideLeft 20s infinite linear;
+      }
+    }
+
+    .my-info {
+      @apply 2xl:w-2/3 xl:w-3/4 w-4/5  h-max grid grid-cols-1 lg:grid-cols-2 place-items-center z-10 bg-transparent gap-12 px-5 lg:px-0;
+
+      .image-side {
+        @apply w-full lg:h-full h-max flex flex-col justify-center items-center gap-8;
+
+        .big-image {
+          @apply lg:h-1/2 xl:w-4/5 lg:w-10/12 w-64 h-64 rounded-full lg:rounded-none object-cover lg:min-h-[calc(60vh)] shadow-lg;
+          border-radius: 10px 0 10px 0;
+        }
+
+        .links {
+          @apply xl:w-4/5 lg:w-10/12 w-2/3  h-max flex flex-row justify-start items-center gap-8;
+
+          .one-link {
+            @apply p-2 shadow-md rounded-full text-black bg-white;
+          }
+
+          .one-link:hover {
+            @apply shadow-md rounded-full text-white bg-black;
+          }
+        }
+      }
+
+      .info-side {
+        @apply w-full h-max flex flex-col justify-center items-start gap-5;
+
+        .info-side-h {
+          @apply font-body font-semibold tracking-widest uppercase text-3xl;
+        }
+
+        .long-p {
+          @apply font-heading tracking-wide font-light text-gray-700 flex flex-row justify-start  w-full lg:w-3/4 leading-relaxed lg:text-base text-sm;
+        }
+
+        .info-side-h2 {
+          @apply font-bold font-heading text-gray-900 tracking-wide;
+        }
+
+        .skills {
+          @apply w-full h-max grid grid-cols-2 place-items-start gap-3;
+
+          .one-skill {
+            @apply font-body text-gray-700 text-sm tracking-wide capitalize relative flex flex-row pl-4 justify-start items-center;
+          }
+
+          .one-skill::after {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: rgba(0, 0, 0, 0.607);
+            border-radius: 50%;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  /* css for the work part */
+  .main-works-container {
+    @apply w-full h-max min-h-screen relative flex flex-col justify-center items-center py-12 lg:py-5 bg-pink-100 overflow-hidden;
+
+    .animating-back {
+      @apply w-full h-[calc(20vh)] flex flex-row justify-center items-center absolute opacity-35 rotate-90 lg:rotate-45;
+
+      .wheel {
+        @apply h-[calc(20vh)] w-[calc(20vh)] rounded-full;
+        border: 1px solid #81c7ed;
+      }
+
+      .wheel::after {
+        content: "";
+        width: 5px;
+        height: 5px;
+        background-color: #81c7ed;
+        display: block;
+        border-radius: 50%;
+      }
+
+      .wheel:hover {
+        opacity: 0.8;
+      }
+
+      .wheel:first-of-type {
+        animation: slide 20s infinite linear;
+      }
+      .wheel:last-of-type {
+        animation: slideLeft 20s infinite linear;
+      }
+    }
+
+    .my-work {
+      @apply 2xl:w-2/3 xl:w-3/4 w-4/5  h-max grid grid-cols-1 lg:grid-cols-2 place-items-center z-10 bg-transparent gap-12 px-5 lg:px-0;
+
+      .images-side {
+        @apply w-full h-max grid grid-cols-1 sm:grid-cols-2 gap-12;
+
+        .images-holder {
+          @apply w-full h-max flex flex-col gap-8;
+
+          .top-p {
+            @apply font-body tracking-wide text-sm text-gray-400;
+          }
+
+          .one-image {
+            @apply relative w-full h-max flex flex-col justify-center items-center;
+
+            .big-image {
+              @apply w-full h-80 object-cover shadow-md;
+            }
+
+            .work-name {
+              @apply absolute w-full h-max flex flex-row justify-center text-xl items-center py-1 tracking-wider font-body font-bold uppercase text-black translate-y-0 opacity-100 md:translate-y-6 md:opacity-0;
+              transition: all 500ms ease-in-out;
+              background-color: rgba(255, 192, 203, 0.607);
+            }
+
+            .work-button {
+              @apply absolute w-full h-16 flex flex-row items-center justify-center gap-5 mt-40
+               font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm opacity-100 md:opacity-50;
+              transition: all 500ms ease-in-out;
+
+              .icon {
+                @apply size-10 md:size-3 p-2 text-white rounded-full shadow-md;
+                background-color: rgb(255, 148, 166) !important;
+                transition: all 500ms ease-in-out;
+              }
+            }
+          }
+
+          .one-image::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 4px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: translateY(4px);
+            transition: width 500ms ease-in-out;
+          }
+
+          .one-image:hover::before {
+            width: 100%;
+          }
+
+          .one-image:hover {
+            border-top: none !important;
+
+            .work-name,
+            .work-button {
+              @apply opacity-100 translate-y-0;
+
+              .icon {
+                @apply size-10;
+              }
+            }
+          }
+        }
+      }
+
+      .info-side {
+        @apply w-full h-max flex flex-col gap-12 justify-center items-start lg:pl-12;
+
+        .info-heading {
+          @apply flex flex-row justify-center font-heading items-center text-black leading-relaxed lg:text-7xl md:text-5xl text-3xl tracking-wider font-semibold capitalize;
+        }
+
+        .info-p {
+          @apply font-heading tracking-wide font-light text-gray-700 flex flex-row justify-start  w-full lg:w-3/4 leading-relaxed lg:text-base text-sm;
+        }
+
+        .info-button {
+          @apply md:min-w-72 min-w-56 h-16 flex flex-row items-center justify-center gap-5 
              font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm shadow-lg bg-pink-200 px-3;
 
-        .button-p {
-          @apply font-bold;
+          .button-p {
+            @apply font-bold;
+          }
+
+          .icon {
+            @apply sm:size-10 size-7  p-2 text-black rounded-full;
+          }
         }
 
-        .icon {
-          @apply sm:size-10 size-7  p-2 text-black rounded-full;
+        .info-h2 {
+          @apply font-extralight text-2xl font-body tracking-wide;
+
+          span {
+            @apply font-semibold;
+          }
         }
       }
+    }
+  }
 
-      .info-h2 {
-        @apply font-extralight text-2xl font-body tracking-wide;
+  /* css for the services page */
+  .main-services-component {
+    @apply w-full h-max flex flex-col gap-6 sm:pt-28 pt-3 bg-black text-white;
+
+    .page-state {
+      @apply w-full h-max min-h-[calc(10vh)] flex flex-row justify-start items-center gap-3;
+
+      .home-link {
+        @apply font-body tracking-wider font-semibold;
+        color: #ffffffd3;
+      }
+      .home-link:hover {
+        @apply text-orange-600 translate-x-1;
+      }
+
+      .line-through {
+        @apply w-[calc(12.5vw)] h-2;
+        border-top: 0.05px solid rgba(128, 128, 128, 0.334);
+      }
+
+      p {
+        @apply font-body font-thin tracking-wide text-xs sm:text-sm flex flex-col justify-center items-end;
+      }
+
+      p:hover {
+        @apply cursor-not-allowed;
+      }
+    }
+
+    .header {
+      @apply w-full h-max flex flex-col justify-center items-center gap-8;
+
+      h1 {
+        @apply w-3/4 font-thin font-body md:text-7xl sm:text-6xl text-5xl leading-normal tracking-wide;
 
         span {
           @apply font-semibold;
+        }
+      }
+
+      .btn {
+        @apply w-3/4;
+
+        button {
+          @apply flex flex-row items-center justify-between gap-5  font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm text-orange-500;
+
+          .icon {
+            @apply sm:size-9 size-7  p-2 text-orange-500 rounded-full shadow-md;
+            background-color: rgba(55, 55, 55, 0.449);
+          }
+        }
+      }
+    }
+
+    .services-container {
+      @apply w-full h-max flex flex-col justify-center items-center mt-12;
+
+      .services-list {
+        @apply xl:w-3/4 w-5/6 h-max min-h-[calc(100vh)] flex flex-row justify-start items-center;
+
+        .left {
+          @apply w-1/3 h-full hidden lg:flex flex-row justify-center items-center  relative;
+
+          .animating-back {
+            @apply w-full min-w-[calc(80vh)] h-[calc(25vh)] flex flex-row justify-center items-center absolute opacity-35 rotate-90;
+            border: 1px solid gray;
+            animation: upAndDown 10s infinite linear;
+
+            .wheel {
+              @apply h-[calc(20vh)] w-[calc(20vh)] rounded-full;
+              border: 1px solid #81c7ed;
+            }
+
+            /* .wheel::after {
+              content: "";
+              width: 5px;
+              height: 5px;
+              background-color: #81c7ed;
+              display: block;
+              border-radius: 50%;
+            } */
+
+            .wheel:hover {
+              opacity: 0.8;
+            }
+
+            .wheel:first-of-type {
+              animation: slideSmall 10s infinite linear;
+            }
+            .wheel:last-of-type {
+              animation: slideLeftSmall 10s infinite linear;
+            }
+          }
+
+          .animating-back::after {
+            content: "";
+            width: 80%;
+            height: 1px;
+            background-color: gray;
+          }
+        }
+
+        .right {
+          @apply lg:w-2/3 w-full h-max grid grid-cols-1 sm:grid-cols-2 gap-3;
+
+          .one-side {
+            @apply flex flex-col gap-16 w-full h-full justify-start;
+
+            .space-above {
+              @apply w-full h-10 hidden lg:flex;
+            }
+
+            .service {
+              @apply w-full h-max flex flex-col gap-2;
+
+              h1 {
+                @apply font-bold font-heading text-2xl w-full lg:w-3/4 tracking-wider leading-relaxed;
+              }
+
+              .paragraph {
+                @apply w-full lg:w-3/4 font-body font-thin tracking-wide text-sm;
+              }
+
+              .explanations {
+                @apply w-full h-max flex flex-col mt-5;
+
+                p {
+                  @apply font-body font-extralight uppercase text-xs h-9 flex flex-row justify-start items-center py-8 tracking-wide;
+
+                  border-top: 1px solid rgba(128, 128, 128, 0.235);
+                }
+
+                p:last-of-type {
+                  border-bottom: 1px solid rgba(128, 128, 128, 0.235);
+                }
+              }
+
+              button {
+                @apply flex flex-row items-center justify-start gap-5  font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm text-orange-500;
+
+                .icon {
+                  @apply sm:size-9 size-7  p-2 text-orange-500 rounded-full shadow-md;
+                  background-color: rgba(55, 55, 55, 0.449);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .impact-part {
+      @apply w-full h-max min-h-[calc(60vh)] flex flex-col justify-start gap-12 text-black;
+      background-color: rgb(239, 248, 255);
+
+      .top {
+        @apply w-full h-[calc(10vh)] flex flex-row justify-end items-end gap-8;
+
+        .line-through {
+          @apply w-0 sm:w-1/3 h-7;
+          border-top: 1px solid rgba(128, 128, 128, 0.405);
+        }
+
+        p {
+          @apply font-body font-light capitalize tracking-wide text-xs sm:text-sm flex flex-col justify-center items-end;
+          line-height: 15px;
+          color: rgba(128, 128, 128, 0.86);
+        }
+      }
+
+      .bottom {
+        @apply w-full h-max flex flex-col gap-12 justify-center items-center pb-8;
+
+        .big-text {
+          @apply w-full h-max flex flex-col justify-center items-center;
+
+          h1 {
+            @apply font-body font-thin xl:text-7xl lg:text-6xl md:text-5xl text-2xl capitalize tracking-wider leading-relaxed;
+
+            span {
+              @apply font-bold xl:text-7xl lg:text-6xl md:text-5xl text-2xl;
+            }
+          }
+        }
+
+        button {
+          @apply flex flex-row items-center justify-center py-3 px-7 gap-5  font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm text-black bg-orange-500;
+
+          .icon {
+            @apply sm:size-9 size-7  p-2 text-orange-500 rounded-full shadow-md;
+            background-color: rgb(0, 0, 0);
+          }
         }
       }
     }
@@ -755,203 +953,6 @@
 
       p {
         @apply font-heading tracking-wide font-extralight text-sm sm:text-base;
-      }
-    }
-  }
-}
-
-/* css for the services page */
-.main-services-component {
-  @apply w-screen h-max flex flex-col gap-6 sm:pt-28 pt-3 bg-black text-white;
-
-  .page-state {
-    @apply w-full h-max min-h-[calc(10vh)] flex flex-row justify-start items-center gap-3;
-
-    .home-link {
-      @apply font-body tracking-wider font-semibold;
-      color: #ffffffd3;
-    }
-    .home-link:hover {
-      @apply text-orange-600 translate-x-1;
-    }
-
-    .line-through {
-      @apply w-[calc(12.5vw)] h-2;
-      border-top: 0.05px solid rgba(128, 128, 128, 0.334);
-    }
-
-    p {
-      @apply font-body font-thin tracking-wide text-xs sm:text-sm flex flex-col justify-center items-end;
-    }
-
-    p:hover {
-      @apply cursor-not-allowed;
-    }
-  }
-
-  .header {
-    @apply w-full h-max flex flex-col justify-center items-center gap-8;
-
-    h1 {
-      @apply w-3/4 font-thin font-body md:text-7xl sm:text-6xl text-5xl leading-normal tracking-wide;
-
-      span {
-        @apply font-semibold;
-      }
-    }
-
-    .btn {
-      @apply w-3/4;
-
-      button {
-        @apply flex flex-row items-center justify-between gap-5  font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm text-orange-500;
-
-        .icon {
-          @apply sm:size-9 size-7  p-2 text-orange-500 rounded-full shadow-md;
-          background-color: rgba(55, 55, 55, 0.449);
-        }
-      }
-    }
-  }
-
-  .services-container {
-    @apply w-full h-max flex flex-col justify-center items-center mt-12;
-
-    .services-list {
-      @apply xl:w-3/4 w-5/6 h-max min-h-[calc(100vh)] flex flex-row justify-start items-center;
-
-      .left {
-        @apply w-1/3 h-full hidden lg:flex flex-row justify-center items-center  relative;
-
-        .animating-back {
-          @apply w-full min-w-[calc(80vh)] h-[calc(25vh)] flex flex-row justify-center items-center absolute opacity-35 rotate-90;
-          border: 1px solid gray;
-          animation: upAndDown 10s infinite linear;
-
-          .wheel {
-            @apply h-[calc(20vh)] w-[calc(20vh)] rounded-full;
-            border: 1px solid #81c7ed;
-          }
-
-          /* .wheel::after {
-              content: "";
-              width: 5px;
-              height: 5px;
-              background-color: #81c7ed;
-              display: block;
-              border-radius: 50%;
-            } */
-
-          .wheel:hover {
-            opacity: 0.8;
-          }
-
-          .wheel:first-of-type {
-            animation: slideSmall 10s infinite linear;
-          }
-          .wheel:last-of-type {
-            animation: slideLeftSmall 10s infinite linear;
-          }
-        }
-
-        .animating-back::after {
-          content: "";
-          width: 80%;
-          height: 1px;
-          background-color: gray;
-        }
-      }
-
-      .right {
-        @apply lg:w-2/3 w-full h-max grid grid-cols-1 sm:grid-cols-2 gap-3;
-
-        .one-side {
-          @apply flex flex-col gap-16 w-full h-full justify-start;
-
-          .space-above {
-            @apply w-full h-10 hidden lg:flex;
-          }
-
-          .service {
-            @apply w-full h-max flex flex-col gap-2;
-
-            h1 {
-              @apply font-bold font-heading text-2xl w-full lg:w-3/4 tracking-wider leading-relaxed;
-            }
-
-            .paragraph {
-              @apply w-full lg:w-3/4 font-body font-thin tracking-wide text-sm;
-            }
-
-            .explanations {
-              @apply w-full h-max flex flex-col mt-5;
-
-              p {
-                @apply font-body font-extralight uppercase text-xs h-9 flex flex-row justify-start items-center py-8 tracking-wide;
-
-                border-top: 1px solid rgba(128, 128, 128, 0.235);
-              }
-
-              p:last-of-type {
-                border-bottom: 1px solid rgba(128, 128, 128, 0.235);
-              }
-            }
-
-            button {
-              @apply flex flex-row items-center justify-start gap-5  font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm text-orange-500;
-
-              .icon {
-                @apply sm:size-9 size-7  p-2 text-orange-500 rounded-full shadow-md;
-                background-color: rgba(55, 55, 55, 0.449);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .impact-part {
-    @apply w-full h-max min-h-[calc(60vh)] flex flex-col justify-start gap-12 text-black;
-    background-color: rgb(239, 248, 255);
-
-    .top {
-      @apply w-full h-[calc(10vh)] flex flex-row justify-end items-end gap-8;
-
-      .line-through {
-        @apply w-0 sm:w-1/3 h-7;
-        border-top: 1px solid rgba(128, 128, 128, 0.405);
-      }
-
-      p {
-        @apply font-body font-light capitalize tracking-wide text-xs sm:text-sm flex flex-col justify-center items-end;
-        line-height: 15px;
-        color: rgba(128, 128, 128, 0.86);
-      }
-    }
-
-    .bottom {
-      @apply w-full h-max flex flex-col gap-12 justify-center items-center pb-8;
-
-      .big-text {
-        @apply w-full h-max flex flex-col justify-center items-center;
-
-        h1 {
-          @apply font-body font-thin xl:text-7xl lg:text-6xl md:text-5xl text-2xl capitalize tracking-wider leading-relaxed;
-
-          span {
-            @apply font-bold xl:text-7xl lg:text-6xl md:text-5xl text-2xl;
-          }
-        }
-      }
-
-      button {
-        @apply flex flex-row items-center justify-center py-3 px-7 gap-5  font-semibold uppercase tracking-wide rounded-full text-xs md:text-sm text-black bg-orange-500;
-
-        .icon {
-          @apply sm:size-9 size-7  p-2 text-orange-500 rounded-full shadow-md;
-          background-color: rgb(0, 0, 0);
-        }
       }
     }
   }
